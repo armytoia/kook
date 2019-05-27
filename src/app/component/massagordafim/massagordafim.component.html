@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Calcular massa gorda
+    </ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-label>IMC:</ion-label>
+  <ion-input [(ngModel)] = "imc"></ion-input>
+  <ion-label>Idade:</ion-label>
+  <ion-input [(ngModel)] = "idade" ></ion-input>
+  <ion-item>
+  <ion-label>Sexo:</ion-label>
+  <ion-select multiple = "true" >
+  <ion-select-option velue = "sexo" selected> feminino </ion-select-option>
+  </ion-select>
+  </ion-item>
+
+
+
+  <ion-button expand= "full" (click) = "calcular()"> calcular </ion-button>
+
+  <ion-button  href = "massagordameio"> voltar </ion-button>
+  <ion-button href = "massagordainicio"> Voltar para o início </ion-button>
+
+</ion-content>
+<ion-footer>
+</ion-footer>

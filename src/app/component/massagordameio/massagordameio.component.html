@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro
+    </ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-label>Nome:</ion-label>
+  <ion-input [(ngModel)] = "nome"></ion-input>
+  <ion-label>Idade:</ion-label>
+  <ion-input [(ngModel)] = "idade" ></ion-input>
+  <ion-label>Telefone(obs:apenas números):</ion-label>
+  <ion-input [(ngModel)] = "telefone" ></ion-input>
+  <ion-label>Senha(obs:apenas letras):</ion-label>
+  <ion-input [(ngModel)] = "senha" ></ion-input>
+  <ion-label>Confirmação da senha:</ion-label>
+  <ion-input [(ngModel)] = "confsenha" ></ion-input>
+  <ion-label>Você pratica atividade física?</ion-label>
+
+  <ion-button (click) = "sim()">sim</ion-button>
+  <ion-button (click) = "nao()">não</ion-button>
+
+
+
+  <ion-label>Clique após terminar</ion-label>
+  <ion-button expand= "full" (click) = "cadastrar()">cadastrar</ion-button>
+
+
+
+  <ion-button  href = "massagordafim"> calcular massa gorda </ion-button>
+  <ion-button href = "massagordainicio"> Voltar para o início </ion-button>
+</ion-content>
+<ion-footer>
+</ion-footer>

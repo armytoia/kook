@@ -18,8 +18,13 @@ export class MassaGordaFimComponent{
 
     if(this.sexo == "feminino"){
       alert("Sua porcentagem de massa gorda é:" +total+"%");
-    }else{
+    }
+    else if(this.sexo == "masculino"){
       alert("Sua porcentagem de massa gorda é:" +resultado+"%");
     }
+    else{
+      alert("Verifique seus dados");
+    }
+
   }
 }

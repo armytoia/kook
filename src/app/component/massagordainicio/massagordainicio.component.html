@@ -1,21 +1,44 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      O que é o C.N. to life?
+      <ion-img src = "../../../assets/img/sports.png" ></ion-img>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+  <ion-card-header>
+    <ion-card-title>O que é o C.N. to life?</ion-card-title>
+  </ion-card-header>
 
-    <ion-img src = "../../../assets/img/download.jpg" ></ion-img>
+  <ion-card-content>
+    Ele é um aplicativo que tem por objetivo ajudar as pessoas a corrigirem os seus maus hábitos em relação a sua saúde, calculando a sua massa gorda e massa magra.
+  </ion-card-content>
+</ion-card>
 
-    <h3>Ele é um aplicativo que tem por objetivo ajudar as pessoas a corrigirem os seus maus hábitos em relação a sua saúde, calculando a sua massa gorda e massa magra.</h3>
+<ion-img src = "../../../assets/img/download.jpg" ></ion-img>
+<ion-card>
+  <ion-item>
+    <ion-label>Mas afinal, o que é massa gorda?</ion-label>
+  </ion-item>
 
-    <h3>Mas afinal, o que é massa gorda?</h3>
-    <p>  É tudo o que mais incomoda a maioria das pessoas, ou seja, a gordura em nosso corpo. Obviamente, a massa gorda tem uma função, o que traz problemas é o excesso. Essa gordura tem papel fundamental na proteção de nossos órgãos, envolvendo-os, mas, obviamente, em grande quantidade, provocará transtornos. Para tudo é preciso equilíbrio.</p>
+  <ion-card-content>
+     É tudo o que mais incomoda a maioria das pessoas, ou seja, a gordura em nosso corpo. Obviamente, a massa gorda tem uma função, o que traz problemas é o excesso. Essa gordura tem papel fundamental na proteção de nossos órgãos, envolvendo-os, mas, obviamente, em grande quantidade, provocará transtornos. Para tudo é preciso equilíbrio.
+  </ion-card-content>
+</ion-card>
 
-    <ion-button  href = "massagordameio"> cadastrar usuário </ion-button>
-    <ion-button  href = "massagordafim"> calcular massa gorda </ion-button>
-  </div>
+<ion-card>
+  <ion-item href="#" class="activated">
+    <ion-icon name="contact" slot="start"></ion-icon>
+    <ion-button  color="secondary" expand= "full" href = "massagordameio"> cadastrar usuário </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="walk" slot="start"></ion-icon>
+    <ion-button  color="secondary" expand= "full" href = "massagordafim"> calcular massa gorda </ion-button>
+  </ion-item>
+</ion-card>
 </ion-content>
+<ion-footer>
+</ion-footer>

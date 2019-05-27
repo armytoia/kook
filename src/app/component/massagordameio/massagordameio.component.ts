@@ -6,13 +6,10 @@ templateUrl : 'massagordameio.component.html'
 })
 
 export class MassaGordaMeioComponent{
-  nome : string;
-  idade: number = 0;
-  telefone: number = 0;
+
   email: string;
   senha: string;
-  confsenha: string;
-
+  
 
   sim(): void{
     alert("Parabéns! Rumo a uma vida melhor");

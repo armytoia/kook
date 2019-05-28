@@ -19,14 +19,21 @@
   <ion-input></ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label position="floating">Data de nascimento:</ion-label>
+    <ion-input [(ngModel)] = "data"></ion-input>
+    <ion-datetime display-format="MMM DD, YYYY "></ion-datetime>
+    <ion-input></ion-input>
+  </ion-item>
 
   <h5>  Você pratica atividade física?  </h5>
   <ion-card>
-    <ion-item href="#" class="activated">
+    <ion-item>
       <ion-icon name="contact" slot="start"></ion-icon>
       <ion-button color="success" (click) = "sim()">sim</ion-button>
     </ion-item>
-
+  </ion-card>
+  <ion-card>
     <ion-item>
       <ion-icon name="walk" slot="start"></ion-icon>
         <ion-button color="danger" (click) = "nao()">não</ion-button>
@@ -34,10 +41,14 @@
   </ion-card>
   <ion-button expand = "full"  fill="outline" (click) = "cadastrar()"> Cadastrar</ion-button>
 
-
-
-  <ion-button  color="secondary" expand = "full" href = "massagordafim"> calcular massa gorda </ion-button>
-  <ion-button color="secondary" expand = "full" href = "massagordainicio"> Voltar para o início </ion-button>
 </ion-content>
 <ion-footer>
+  <ion-item>
+    <ion-icon name="arrow-round-forward"></ion-icon>
+        <ion-button  color="secondary" expand = "full" href = "massagordafim"> calcular massa gorda </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="arrow-round-back"></ion-icon>
+        <ion-button color="secondary" expand = "full" href = "massagordainicio"> Voltar para o início </ion-button>
+    </ion-item>
 </ion-footer>

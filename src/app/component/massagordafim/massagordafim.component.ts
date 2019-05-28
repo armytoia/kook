@@ -6,8 +6,8 @@ templateUrl : 'massagordafim.component.html'
 })
 
 export class MassaGordaFimComponent{
-  imc: number =0;
-  idade: number = 0;
+  imc: number;
+  idade: number;
   sexo: string;
 
   calcular(): void{
@@ -23,7 +23,7 @@ export class MassaGordaFimComponent{
       alert("Sua porcentagem de massa gorda é:" +resultado+"%");
     }
     else{
-      alert("Verifique seus dados");
+      alert("Verifique se o seu sexo está escrito corretamente");
     }
 
   }

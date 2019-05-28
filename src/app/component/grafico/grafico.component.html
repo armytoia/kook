@@ -7,8 +7,16 @@
 </ion-header>
 <ion-content>
 
+<ion-img src = "../../../assets/img/TEMPO.jpg" ></ion-img>
 
-
+<ion-card>
+   <ion-card-header>
+     Bar Chart
+   </ion-card-header>
+   <ion-card-content>
+     <canvas #barCanvas></canvas>
+   </ion-card-content>
+ </ion-card>
 
 
 
@@ -19,6 +27,12 @@
 
 </ion-content>
 <ion-footer>
-  <ion-button  color="secondary" expand = "full" href = "massagordafim"> voltar </ion-button>
-  <ion-button color="secondary" expand = "full" href = "dicas"> avançar </ion-button>
+  <ion-item>
+    <ion-icon name="arrow-round-back"></ion-icon>
+      <ion-button  color="secondary" expand = "full" href = "massagordafim"> voltar </ion-button>
+    </ion-item>
+  <ion-item>
+    <ion-icon name="arrow-round-forward"></ion-icon>
+        <ion-button color="secondary" expand = "full" href = "dicas"> dicas </ion-button>
+    </ion-item>
 </ion-footer>

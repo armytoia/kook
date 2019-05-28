@@ -9,7 +9,7 @@ export class MassaGordaMeioComponent{
 
   email: string;
   senha: string;
-  
+  data: number;
 
   sim(): void{
     alert("Parabéns! Rumo a uma vida melhor");

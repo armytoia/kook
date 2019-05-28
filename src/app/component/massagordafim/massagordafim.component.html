@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header >
   <ion-toolbar>
     <ion-title>
       Calcular massa gorda
@@ -7,22 +7,20 @@
 </ion-header>
 <ion-content>
 
-  <ion-img src = "../../../assets/img/download.jpg" ></ion-img>
-  <ion-label>IMC:</ion-label>
-  <ion-input [(ngModel)] = "imc"></ion-input>
-  <ion-label>Idade:</ion-label>
-  <ion-input [(ngModel)] = "idade" ></ion-input>
+
+
   <ion-item>
-  <ion-label>Sexo:</ion-label>
-  <ion-select multiple = "true" >
-  <ion-select-option velue = "sexo" selected> feminino </ion-select-option>
-  <ion-select-option velue = "sexo" selected> masculino </ion-select-option>
-  </ion-select>
+  <ion-label position="floating">IMC:</ion-label>
+  <ion-input [(ngModel)] = "imc"></ion-input>
   </ion-item>
-
-
-
-
+  <ion-item>
+  <ion-label position="floating">Idade:</ion-label>
+  <ion-input [(ngModel)] = "idade" ></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Sexo:</ion-label>
+  <ion-input [(ngModel)] = "sexo" ></ion-input>
+  </ion-item>
 
 
   <ion-button expand = "full"  fill="outline" (click) = "calcular()"> calcular </ion-button>
@@ -32,7 +30,18 @@
 
 </ion-content>
 <ion-footer>
-  <ion-button  color="secondary" expand = "full" href = "massagordameio"> voltar </ion-button>
-  <ion-button color="secondary" expand = "full" href = "massagordainicio"> Voltar para o início </ion-button>
-  <ion-button  color="secondary" expand = "full" href = "grafico"> acompanhamento </ion-button>
+  <ion-item>
+    <ion-icon name="arrow-round-back"></ion-icon>
+        <ion-button  color="secondary" expand = "full" href = "massagordameio"> voltar </ion-button>
+    </ion-item>
+
+  <ion-item>
+    <ion-icon name="arrow-round-back"></ion-icon>
+        <ion-button color="secondary" expand = "full" href = "massagordainicio"> Voltar para o início </ion-button>
+    </ion-item>
+
+  <ion-item>
+    <ion-icon name="arrow-round-forward"></ion-icon>
+      <ion-button  color="secondary" expand = "full" href = "grafico"> acompanhamento </ion-button>
+    </ion-item>
 </ion-footer>

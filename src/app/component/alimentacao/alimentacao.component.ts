@@ -6,5 +6,7 @@ templateUrl : 'alimentacao.component.html'
 })
 
 export class AlimentacaoComponent{
+nome : string;
+duracao : number;
 
 }

@@ -6,5 +6,6 @@ templateUrl : 'exercicio.component.html'
 })
 
 export class ExercicioComponent{
-
+nome : string;
+duracao : number;
 }

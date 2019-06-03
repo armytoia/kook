@@ -1,24 +1,27 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component ({
-selector : 'massagordameio-component',
-templateUrl : 'massagordameio.component.html'
+@Component({
+  selector: 'massagordameio-component',
+  templateUrl: 'massagordameio.component.html'
 })
 
-export class MassaGordaMeioComponent{
+export class MassaGordaMeioComponent {
 
   email: string;
   senha: string;
   data: number;
 
-  sim(): void{
+  constructor() {
+
+  }
+
+  sim(): void {
     alert("Parabéns! Rumo a uma vida melhor");
   }
-  nao():void{
+  nao(): void {
     alert("Não perca mais tempo e comece enquanto há tempo!");
   }
-  cadastrar(): void{
-
-      alert("Cadastro realizado com sucesso!");
-    }
+  cadastrar(): void {
+    alert("Cadastro realizado com sucesso!");
   }
+}

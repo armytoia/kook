@@ -10,6 +10,9 @@ export class MassaGordaFimComponent{
   idade: number;
   sexo: string;
 
+  constructor(){
+  
+  }
   calcular(): void{
     let imc = Number(this.imc);
     let idade = Number(this.idade);

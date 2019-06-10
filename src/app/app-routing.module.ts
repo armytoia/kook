@@ -12,6 +12,8 @@ import { PerdaComponent } from './component/perda/perda.component';
 import { GanhoComponent } from './component/ganho/ganho.component';
 import { LocalizadoComponent } from './component/localizado/localizado.component';
 import { AquecimentoComponent } from './component/aquecimento/aquecimento.component';
+import { SalvarUsuarioComponent } from './usuario/salvar-usuario/salvar-usuario.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'perda', component: PerdaComponent },
   { path: 'ganho', component:  GanhoComponent },
   { path: 'localizado', component: LocalizadoComponent},
-  { path: 'aquecimento', component: AquecimentoComponent}
+  { path: 'aquecimento', component: AquecimentoComponent},
+  { path: 'salvar-usuario', component : SalvarUsuarioComponent}
 ];
 
 @NgModule({

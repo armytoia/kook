@@ -7,22 +7,38 @@
 </ion-header>
 <ion-content>
   <ion-item>
+  <ion-label position="floating" >Nome:</ion-label>
+  <ion-input [(ngModel)] = "pessoa.nome"></ion-input>
+  <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
   <ion-label position="floating" >Email:</ion-label>
-  <ion-input [(ngModel)] = "usuario.email"></ion-input>
+  <ion-input [(ngModel)] = "pessoa.email"></ion-input>
   <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
   <ion-label position="floating">Senha:</ion-label>
-  <ion-input [(ngModel)] = "usuario.senha"></ion-input>
+  <ion-input [(ngModel)] = "pessoa.senha"></ion-input>
   <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Data de nascimento:</ion-label>
-    <ion-input [(ngModel)] = "usuario.data"></ion-input>
-    <ion-datetime display-format="DD MMM, YYYY "></ion-datetime>
-    <ion-input></ion-input>
+  <ion-label position="floating" >Ano de nascimento:</ion-label>
+  <ion-input [(ngModel)] = "pessoa.data"></ion-input>
+  <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label position="floating">Sexo:</ion-label>
+  <ion-input [(ngModel)] = "pessoa.sexo"></ion-input>
+  <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label position="floating">Altura:</ion-label>
+  <ion-input [(ngModel)] = "pessoa.altura"></ion-input>
+  <ion-input></ion-input>
   </ion-item>
 
   <ion-label>  Você pratica atividade física?  </ion-label>
@@ -44,7 +60,7 @@
 <ion-footer>
   <ion-item>
     <ion-icon name="arrow-round-forward"></ion-icon>
-        <ion-button  color="secondary" expand = "full" href = "massagordafim"> calcular massa gorda </ion-button>
+        <ion-button  color="secondary" expand = "full" href = "cadastrar-massa"> calcular massa gorda </ion-button>
     </ion-item>
     <ion-item>
       <ion-icon name="arrow-round-back"></ion-icon>

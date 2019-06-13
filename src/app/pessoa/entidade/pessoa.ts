@@ -1,7 +1,6 @@
 export class Pessoa{
   nome: string;
   email: string;
+  senha : string;
   data : number;
-  sexo : string;
-  altura: number;
 }

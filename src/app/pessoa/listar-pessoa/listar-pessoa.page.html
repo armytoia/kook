@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Pessoas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list color="secondary">
+    <ion-item *ngFor="let pessoa of listaPessoas | async">
+      <ion-label>{{ pessoa.nome }}</ion-label>
+      <ion-label>{{ pessoa.data }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-item>
+    <ion-icon name="arrow-round-back"></ion-icon>
+      <ion-button  color="secondary" expand = "full" href = "salvar-pessoa"> voltar </ion-button>
+    </ion-item>
+</ion-footer>

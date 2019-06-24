@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'salvar-pessoa', component : SalvarPessoaComponent},
   { path: 'cadastrar-massa', component : CadastrarMassaComponent},
   { path: 'listar-massa', component : ListarMassaComponent},
+  { path: 'listar-pessoa', loadChildren: './pessoa/listar-pessoa/listar-pessoa.module#ListarPessoaPageModule' },
 ];
 
 @NgModule({

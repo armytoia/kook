@@ -7,12 +7,12 @@ templateUrl : 'grafico.component.html'
 })
 
 export class GraficoComponent{
-      @aViewChild('barCanvas') barCanvas;
+  /*    @aViewChild('barCanvas') barCanvas;
 
       barChart: any;
 
 
-    constructor(public navCtrl: any) { }
+    constructor(public navCtrl: any, private rota : Router) { }
 
     ngAfterViewInit(){
       setTimeout(() => {
@@ -57,12 +57,5 @@ export class GraficoComponent{
       }
 
       return this.getChart(this.barCanvas.nativeElement, 'bar', data, options);
-    }
-
-
-    consultar(){
-      this.rota.navigate(['listar-massa']);
-    }
-
-
+    }*/
   }

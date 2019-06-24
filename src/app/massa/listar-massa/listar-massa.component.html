@@ -8,9 +8,12 @@
 
 <ion-content>
   <ion-list color="secondary">
+    <h5> Data </h5>
     <ion-item *ngFor="let massa of listaMassas | async">
-      <ion-label>{{ massa.data }}</ion-label>
-      <ion-label>{{ massa.peso }}</ion-label>
+
+      <ion-label>     <h5> Data </h5> {{ massa.data }}</ion-label>
+      <ion-title> Massa </ion-title>
+      <ion-label> {{ massa.peso }}</ion-label>
       <ion-label>{{ massa.imc }}</ion-label>
     </ion-item>
   </ion-list>
@@ -18,10 +21,6 @@
 <ion-footer>
   <ion-item>
     <ion-icon name="arrow-round-back"></ion-icon>
-      <ion-button  color="secondary" expand = "full" (click) = "voltar()"> voltar </ion-button>
-    </ion-item>
-    <ion-item>
-    <ion-icon name="arrow-round-forward"></ion-icon>
-        <ion-button color="secondary" expand = "full" (click) = "ir()"> dicas </ion-button>
+      <ion-button  color="secondary" expand = "full" href = "grafico"> voltar </ion-button>
     </ion-item>
 </ion-footer>

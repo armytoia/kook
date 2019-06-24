@@ -1,10 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component ({
-selector : 'aquecimento-component',
-templateUrl : 'aquecimento.component.html'
+@Component({
+  selector: 'aquecimento-component',
+  templateUrl: 'aquecimento.component.html'
 })
 
-export class AquecimentoComponent{
-
+export class AquecimentoComponent {
 }

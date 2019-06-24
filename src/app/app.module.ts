@@ -23,9 +23,10 @@ import { SalvarPessoaComponent } from './pessoa/salvar-pessoa/salvar-pessoa.comp
 import { CadastrarMassaComponent } from './massa/cadastrar-massa/cadastrar-massa.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { ListarMassaComponent } from './massa/listar-massa/listar-massa.component';
 
 @NgModule({
-  declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, DicasComponent, ExercicioComponent, AlimentacaoComponent, LocalizadoComponent, AquecimentoComponent, PerdaComponent, GanhoComponent, BoaComponent, SalvarPessoaComponent, CadastrarMassaComponent],
+  declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, DicasComponent, ExercicioComponent, AlimentacaoComponent, LocalizadoComponent, AquecimentoComponent, PerdaComponent, GanhoComponent, BoaComponent, SalvarPessoaComponent, CadastrarMassaComponent, ListarMassaComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
     AngularFireModule.initializeApp({

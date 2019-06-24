@@ -7,7 +7,7 @@ templateUrl : 'grafico.component.html'
 })
 
 export class GraficoComponent{
-      /*@aViewChild('barCanvas') barCanvas;
+      @aViewChild('barCanvas') barCanvas;
 
       barChart: any;
 
@@ -33,8 +33,8 @@ export class GraficoComponent{
       const data = {
         labels: ['Vermelho', 'Azul', 'Amarelo', 'Verde', 'Roxo'],
         datasets: [{
-          label: 'número de votos',
-          data: [12, 23, 15, 90, 5],
+          label: 'Indice de massa gorda',
+          data: ["janeiro", "fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],
           backgroundColor: [
             'rgb(255, 0, 0)',
             'rgb(20, 0, 255)',
@@ -57,10 +57,12 @@ export class GraficoComponent{
       }
 
       return this.getChart(this.barCanvas.nativeElement, 'bar', data, options);
-    }*/
+    }
 
 
-
+    consultar(){
+      this.rota.navigate(['listar-massa']);
+    }
 
 
   }

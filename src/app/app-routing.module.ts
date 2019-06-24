@@ -12,6 +12,7 @@ import { LocalizadoComponent } from './component/localizado/localizado.component
 import { AquecimentoComponent } from './component/aquecimento/aquecimento.component';
 import { SalvarPessoaComponent } from './pessoa/salvar-pessoa/salvar-pessoa.component';
 import { CadastrarMassaComponent } from './massa/cadastrar-massa/cadastrar-massa.component';
+import { ListarMassaComponent } from './massa/listar-massa/listar-massa.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'localizado', component: LocalizadoComponent},
   { path: 'aquecimento', component: AquecimentoComponent},
   { path: 'salvar-pessoa', component : SalvarPessoaComponent},
-  { path: 'cadastrar-massa', component : CadastrarMassaComponent}
+  { path: 'cadastrar-massa', component : CadastrarMassaComponent},
+  { path: 'listar-massa', component : ListarMassaComponent},
 ];
 
 @NgModule({

@@ -6,4 +6,5 @@ export class Massa {
   imc : number;
   resultado : number;
   total : number;
+  dia : string;
 }

@@ -1,20 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Lista de Massas
+      Lista de Peso
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list color="secondary">
-    <h5> Data </h5>
     <ion-item *ngFor="let massa of listaMassas | async">
-
-      <ion-label>     <h5> Data </h5> {{ massa.data }}</ion-label>
-      <ion-title> Massa </ion-title>
+      <ion-label>{{ massa.dia }}</ion-label>
       <ion-label> {{ massa.peso }}</ion-label>
-      <ion-label>{{ massa.imc }}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

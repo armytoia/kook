@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Email:</ion-label>
+    <ion-input type="text" placeholder="insira o seu email" name="email" [(ngModel)]="pessoa.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Senha:</ion-label>
+    <ion-input type="password" placeholder="insira a sua senha" name="senha" [(ngModel)]="pessoa.senha"></ion-input>
+  </ion-item>
+
+  <ion-label> Você pratica atividade física? </ion-label>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="contact" slot="start"></ion-icon>
+      <ion-button color="success" (click)="sim()">sim</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="walk" slot="start"></ion-icon>
+      <ion-button color="danger" (click)="nao()">não</ion-button>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-button expand="full" fill="outline" (click)="cadastrar()"> Cadastrar</ion-button>
+
+</ion-content>
+<ion-footer>
+  <ion-item>
+    <ion-icon name="arrow-round-back"></ion-icon>
+    <ion-button color="secondary" expand="full" href="massagordainicio"> Voltar para o início </ion-button>
+  </ion-item>
+</ion-footer>

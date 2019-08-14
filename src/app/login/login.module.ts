@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularFireAuth } from "angularfire2/auth";
 import { IonicModule } from '@ionic/angular';
 
-import { ListarPessoaPage } from './listar-pessoa.page';
+import { LoginPage } from './login.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListarPessoaPage
+    component: LoginPage
   }
 ];
 
@@ -21,7 +21,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListarPessoaPage],
-  providers:[AngularFireAuth]
+  declarations: [LoginPage],
+    providers:[AngularFireAuth]
 })
-export class ListarPessoaPageModule {}
+export class LoginPageModule {}

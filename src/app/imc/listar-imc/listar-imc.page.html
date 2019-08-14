@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista de IMC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let imc of listaImc| async">
+      <ion-label>{{ cidade.nome }}</ion-label>
+      <ion-label>{{ cidade.estado }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" shape="round" href="salvar-imc">voltar</ion-button>
+</ion-content>

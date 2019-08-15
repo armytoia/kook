@@ -11,14 +11,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MassaGordaInicioComponent } from './component/massagordainicio/massagordainicio.component';
 import { GraficoComponent } from './component/grafico/grafico.component';
-import { PerdaComponent } from './component/perda/perda.component';
 import { CadastrarMassaComponent } from './massa/cadastrar-massa/cadastrar-massa.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ListarMassaComponent } from './massa/listar-massa/listar-massa.component';
 
 @NgModule({
-  declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, PerdaComponent, CadastrarMassaComponent, ListarMassaComponent],
+  declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, CadastrarMassaComponent, ListarMassaComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
     AngularFireModule.initializeApp({

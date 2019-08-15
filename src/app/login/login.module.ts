@@ -22,6 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [LoginPage],
-    providers:[AngularFireAuth]
+providers: [AngularFireAuth]
 })
 export class LoginPageModule {}

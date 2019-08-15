@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista de pesos e alturas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let pesoaltura of listaPesoaltura| async">
+      <ion-label>{{ imc.peso }}</ion-label>
+      <ion-label>{{ imc.altura }}</ion-label>
+    </ion-item>
+  </ion-list>
+    <ion-button expand="full" fill="outline" href = "salvar-pesoaltura"> voltar </ion-button>
+</ion-content>

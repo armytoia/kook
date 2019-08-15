@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Massa } from '../entidade/massa';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Pessoa } from '../../pessoa/entidade/pessoa';
+import { Pessoa } from '../../entidade/pessoa';
 @Component({
   selector: 'app-cadastrar-massa',
   templateUrl: './cadastrar-massa.component.html',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Pessoa } from '../entidade/pessoa';
+import { Pessoa } from '../../entidade/pessoa';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -21,6 +21,7 @@ export class ListarPessoaPage implements OnInit {
     );//ira guardar esses contatos(lista), o fire tem os metodos necessarios para listar, e converter os dados para contato, configurando ela em linha(chave)
 
   }
+
   ngOnInit() {
   }
 

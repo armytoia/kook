@@ -1,26 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Cálculo do IMC
+      Atualizar peso e altura
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-item>
 <ion-label position="floating">Peso:</ion-label>
-<ion-select [(ngModel)]="imc.peso">
-<ion-select-option *ngFor='let pesoaltura of listaPesoaltura | async' [value]="peso" >
-{{pesoaltura.peso}}
-</ion-select-option>
-</ion-select>
+<ion-input [(ngModel)]="imc.peso"></ion-input>
 </ion-item>
   <ion-item>
   <ion-label position="floating">Altura:</ion-label>
-  <ion-select [(ngModel)]="imc.altura">
-  <ion-select-option *ngFor='let pesoaltura of listaPesoaltura | async' [value]="altura" >
-  {{pesoaltura.altura}}
-  </ion-select-option>
-  </ion-select>
+  <ion-input [(ngModel)]="imc.altura"></ion-input>
   </ion-item>
 
   <ion-button expand="full" fill="outline" (click)="calcular()"> calcular </ion-button>

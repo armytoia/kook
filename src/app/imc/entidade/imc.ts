@@ -1,5 +1,5 @@
-import { Pesoaltura } from 'src/app/pesoaltura/entidade/pesoaltura';
+import { Peso } from 'src/app/peso/entidade/peso';
 export class Imc {
-  altura: Pesoaltura;
-  peso: Pesoaltura;
+  altura: Peso;
+  peso: Peso;
 }

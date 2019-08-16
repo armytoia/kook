@@ -7,24 +7,27 @@
 </ion-header>
 <ion-content>
   <ion-item>
-<ion-label position="floating">Peso:</ion-label>
-<ion-select [(ngModel)]="imc.peso">
-<ion-select-option *ngFor='let pesoaltura of listaPesoaltura | async' [value]="peso" >
-{{pesoaltura.peso}}
-</ion-select-option>
-</ion-select>
-</ion-item>
+    <ion-label position="floating">Peso:</ion-label>
+    <ion-select [(ngModel)]="imc.peso">
+      <ion-select-option *ngFor='let pesoaltura of listaPesoaltura | async' [value]="peso">
+        {{imc.peso}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-item>
-  <ion-label position="floating">Altura:</ion-label>
-  <ion-select [(ngModel)]="imc.altura">
-  <ion-select-option *ngFor='let pesoaltura of listaPesoaltura | async' [value]="altura" >
-  {{pesoaltura.altura}}
-  </ion-select-option>
-  </ion-select>
+    <ion-label position="floating">Altura:</ion-label>
+    <ion-select [(ngModel)]="imc.altura">
+      <ion-select-option *ngFor='let pesoaltura of listaPesoaltura | async' [value]="altura">
+        {{imc.altura}}
+      </ion-select-option>
+    </ion-select>
   </ion-item>
 
   <ion-button expand="full" fill="outline" (click)="calcular()"> calcular </ion-button>
   <ion-button expand="full" fill="outline" (click)="salvar()"> salvar </ion-button>
-  <ion-button expand="full" fill="outline" href = "listar-pesoaltura"> lista de pesos e alturas </ion-button>
-
 </ion-content>
+<ion-footer>
+  <ion-button expand="full" fill="outline" href="listar-pesoaltura"> lista de pesos e alturas </ion-button>
+  <ion-button expand="full" fill="outline" href="grafico"> acompanhamento </ion-button>
+  <ion-button expand="full" fill="outline" href="cadastrar-massa"> voltar </ion-button>
+</ion-footer>

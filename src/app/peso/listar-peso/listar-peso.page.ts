@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Imc } from '../../imc/entidade/imc';
+import { Peso } from '../../peso/entidade/peso';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 @Component({
-  selector: 'app-listar-pesoaltura',
-  templateUrl: './listar-pesoaltura.page.html',
-  styleUrls: ['./listar-pesoaltura.page.scss'],
+  selector: 'app-listar-peso',
+  templateUrl: './listar-peso.page.html',
+  styleUrls: ['./listar-peso.page.scss'],
 })
-export class ListarPesoalturaPage implements OnInit {
+export class ListarPesoPage implements OnInit {
 
-  listaPesoaltura: Observable<Imc[]>;
+  listaPeso: Observable<Peso[]>;
 
     constructor(private fire: AngularFireDatabase) {
-      this.listaPesoaltura = this.fire.list<Imc>('pesoaltura').snapshotChanges().pipe(
+      this.listaPeso = this.fire.list<Peso>('peso').snapshotChanges().pipe(
         map( lista => lista.map(linha => ({ key: linha.payload.key, ... linha.payload.val() })))
       );
     }

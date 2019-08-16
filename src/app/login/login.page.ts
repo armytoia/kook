@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
-import { AngularFireDatabase } from '@angular/fire/database';
 import { Pessoa } from '../entidade/pessoa';
 
 @Component({
@@ -11,7 +10,7 @@ import { Pessoa } from '../entidade/pessoa';
 })
 export class LoginPage implements OnInit {
 
-  usuario: Pessoa = new Pessoa();
+  pessoa: Pessoa = new Pessoa();
  constructor(private afAuth: AngularFireAuth, private router: Router) { }
  logar() {
    this.afAuth.auth.signInWithEmailAndPassword(this.pessoa.email, this.pessoa.senha).then(

@@ -15,8 +15,9 @@
     <ion-label position="floating">Senha:</ion-label>
     <ion-input type="password" placeholder="insira a sua senha" name="senha" [(ngModel)]="pessoa.senha"></ion-input>
   </ion-item>
-
+   <ion-item>
   <ion-label> Você pratica atividade física? </ion-label>
+  </ion-item>
   <ion-card>
     <ion-item>
       <ion-icon name="contact" slot="start"></ion-icon>
@@ -38,5 +39,13 @@
   <ion-item>
     <ion-icon name="arrow-round-back"></ion-icon>
     <ion-button color="secondary" expand="full" href="massagordainicio"> Voltar para o início </ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="arrow-round-forward"></ion-icon>
+    <ion-button color="secondary" expand="full" href="cadastrar-massa"> calcular massa gorda </ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="arrow-round-forward"></ion-icon>
+    <ion-button color="secondary" expand="full" href="pesoaltura"> cadastrar peso e altura </ion-button>
   </ion-item>
 </ion-footer>

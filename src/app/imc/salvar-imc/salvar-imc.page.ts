@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 
-import { Pesoaltura } from '../../pesoaltura/entidade/pesoaltura';
+import { Peso } from '../../peso/entidade/peso';
 import { Imc } from '../entidade/imc';
 @Component({
   selector: 'app-salvar-imc',
@@ -13,14 +13,14 @@ import { Imc } from '../entidade/imc';
 })
 export class SalvarImcPage implements OnInit {
   imc: Imc = new Imc();
-  listaPesoaltura: Observable<Pesoaltura[]>;
+  listaPeso: Observable<Peso[]>;
   constructor(private fire: AngularFireDatabase, private rota: Router) {
-    this.listaPesoaltura = this.fire.list<Pesoaltura>('pesoaltura').snapshotChanges().pipe(
+    this.listaPeso = this.fire.list<Peso>('peso').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
     );
   }
   salvar() {
-    this.fire.list('cidade').push(this.imc);
+    this.fire.list('imc').push(this.imc);
     this.imc = new Imc();
     this.rota.navigate(['grafico']);
   }

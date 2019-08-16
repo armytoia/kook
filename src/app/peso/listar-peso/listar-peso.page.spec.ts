@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListarPesoalturaPage } from './listar-pesoaltura.page';
+import { ListarPesoPage } from './listar-peso.page';
 
-describe('ListarPesoalturaPage', () => {
-  let component: ListarPesoalturaPage;
-  let fixture: ComponentFixture<ListarPesoalturaPage>;
+describe('ListarPesoPage', () => {
+  let component: ListarPesoPage;
+  let fixture: ComponentFixture<ListarPesoPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListarPesoalturaPage ],
+      declarations: [ ListarPesoPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListarPesoalturaPage);
+    fixture = TestBed.createComponent(ListarPesoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

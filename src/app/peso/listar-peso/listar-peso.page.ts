@@ -24,9 +24,9 @@ export class ListarPesoPage implements OnInit {
     this.fire.list('peso').remove(key);
     alert("excluido da lista");
   }
-/*  editar(key){
+  /* editar(key){
     this.fire.list('peso').update(key);
-    alert("excluido da lista");
+    this.router.navigate(['salvar-peso']);
   }*/
 
 }

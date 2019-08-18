@@ -8,6 +8,7 @@ import { LoginPage } from './login/login.page';
 import { SalvarPessoaPage } from './pessoa/salvar-pessoa/salvar-pessoa.page';
 import { ListarPessoaPage } from './pessoa/listar-pessoa/listar-pessoa.page';
 import { SalvarImcPage } from './imc/salvar-imc/salvar-imc.page';
+import { SalvarNovasenhaComponent } from './novasenha/salvar-novasenha/salvar-novasenha.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,10 +20,11 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'salvar-pessoa', loadChildren: './pessoa/salvar-pessoa/salvar-pessoa.module#SalvarPessoaPageModule' },
   { path: 'listar-pessoa', loadChildren: './pessoa/listar-pessoa/listar-pessoa.module#ListarPessoaPageModule' },
-    { path: 'salvar-imc', loadChildren: './imc/salvar-imc/salvar-imc.module#SalvarImcPageModule' },
+  { path: 'salvar-imc', loadChildren: './imc/salvar-imc/salvar-imc.module#SalvarImcPageModule' },
   { path: 'salvar-peso', loadChildren: './peso/salvar-peso/salvar-peso.module#SalvarPesoPageModule' },
   { path: 'listar-peso', loadChildren: './peso/listar-peso/listar-peso.module#ListarPesoPageModule' },
   { path: 'filtro', loadChildren: './imc/filtro/filtro.module#FiltroPageModule' },
+  { path: 'salvar-novasenha', component: SalvarNovasenhaComponent},
 ];
 
 @NgModule({

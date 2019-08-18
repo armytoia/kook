@@ -6,9 +6,36 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let imc of listaImc| async">
-      <ion-label>{{ cidade.nome }}</ion-label>
-      <ion-label>{{ cidade.estado }}</ion-label>
+      <ion-label>{{ imc.peso }}</ion-label>
+      <ion-label>{{ imc.altura }}</ion-label>
     </ion-item>
   </ion-list>
+  <h2>Filtro</h2>
+
+<ion-item>
+  <ion-label position="floating">Escolha um filtro</ion-label>
+  <ion-select [(ngModel)]="peso" (ionChange)="filterExact('peso', peso)">
+    <ion-select-option *ngFor='let imc of listaImc | async' [value]="imc.peso" >{{imc.peso}}</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-button *ngIf="imc" (click)="removeFilter('imc')">Remove filtro</ion-button>
+
+<ion-item>
+  <ion-label position="floating">Digite o filtro</ion-label>
+  <ion-input type="text" [(ngModel)]="peso" (change)="filterGreaterThan('peso', peso)"></ion-input>
+</ion-item>
+<ion-button *ngIf="peso" (click)="removeFilter('peso')">Remove filter</ion-button>
+
+<h4>Endangered Species</h4>
+<ion-checkbox [(ngModel)]="peso" (ionChange)="filterBoolean('status', true)">Ativo</ion-checkbox>
+
+<div >
+  <ion-list>
+    <ion-item *ngFor="let imc of filtroImc">
+      <ion-label>{{imc.peso}}</ion-label>
+    </ion-item>
+  </ion-list>
+</div>
   <ion-button expand="full" shape="round" href="salvar-imc">voltar</ion-button>
 </ion-content>

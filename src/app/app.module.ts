@@ -15,9 +15,8 @@ import { CadastrarMassaComponent } from './massa/cadastrar-massa/cadastrar-massa
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ListarMassaComponent } from './massa/listar-massa/listar-massa.component';
-import { SalvarNovasenhaComponent } from './novasenha/salvar-novasenha/salvar-novasenha.component';
 @NgModule({
-  declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, CadastrarMassaComponent, ListarMassaComponent, SalvarNovasenhaComponent],
+  declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, CadastrarMassaComponent, ListarMassaComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
     AngularFireModule.initializeApp({

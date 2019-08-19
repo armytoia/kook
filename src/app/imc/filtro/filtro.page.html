@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <h2>Filtro Peso - combobox</h2>
+  <h2>Filtro Peso</h2>
   <ion-item>
     <ion-label position="floating">Escolha um filtro</ion-label>
     <ion-select [(ngModel)]="peso" (ionChange)="filtrar('peso', peso)">
@@ -14,14 +14,14 @@
   </ion-item>
   <ion-button *ngIf="imc" (click)="removeFilter('peso')">Remove filtro</ion-button>
 
-  <h2>Filtro Altura - campo texto</h2>
+  <h2>Filtro Altura</h2>
   <ion-item>
     <ion-label position="floating">Digite o filtro</ion-label>
     <ion-input type="text" [(ngModel)]="altura" (change)="filtrar('altura', altura)"></ion-input>
   </ion-item>
   <ion-button *ngIf="qtdeMaior" (click)="removeFilter('altura')">Remove filter</ion-button>
 
-  <h2>Filtro Status - checkBox</h2>
+  <h2>Filtro Status</h2>
   <ion-checkbox [(ngModel)]="status" (ionChange)="filtroStatus('status', true)">Ativo</ion-checkbox>
 
   <div >

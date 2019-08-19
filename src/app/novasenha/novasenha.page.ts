@@ -1,15 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NavController, ToastController, AuthService } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
+import { Pessoa } from '../entidade/pessoa';
 
 @Component({
-  selector : 'salvar-novasenha-component',
-  templateUrl : 'salvar-novasenha.component.html'
+  selector: 'app-novasenha',
+  templateUrl: './novasenha.page.html',
+  styleUrls: ['./novasenha.page.scss'],
+  template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
-export class SalvarNovasenhaComponent {
-  pessoa.email: string = '';
+export class NovasenhaPage implements OnInit {
   @ViewChild('form') form: NgForm;
-
+  pessoa: Pessoa = new Pessoa();
   constructor(
     public navCtrl: NavController,
     private toastCtrl: ToastController,
@@ -37,6 +39,9 @@ export class SalvarNovasenhaComponent {
           toast.present();
         });
     }
+  }
+
+  ngOnInit() {
   }
 
 }

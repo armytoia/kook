@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Imc } from '../entidade/imc';
 @Component({
   selector: 'app-listar-imc',
   templateUrl: './listar-imc.page.html',

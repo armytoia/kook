@@ -1,7 +1,7 @@
-import { PesoProvider } from './../../providers/peso/peso';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PesoProvider } from '../providers/peso/peso.provider';
 
 @IonicPage()
 @Component({
@@ -14,25 +14,12 @@ export class PesoEditPage {
   title: string;
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
-    private formBuilder: FormBuilder, private provider: ContactProvider,
+    private formBuilder: FormBuilder, private provider: PesoProvider,
     private toast: ToastController) {
 
     // maneira 1
     this.peso = this.navParams.data.peso || { };
     this.createForm();
-
-    // // maneira 2
-    // this.contact = { };
-    // this.createForm();
-
-    // if (this.navParams.data.key) {
-    //   const subscribe = this.provider.get(this.navParams.data.key).subscribe((c: any) => {
-    //     subscribe.unsubscribe();
-
-    //     this.contact = c;
-    //     this.createForm();
-    //   })
-    // }
 
     this.setupPageTitle();
   }

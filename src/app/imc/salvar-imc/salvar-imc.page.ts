@@ -3,9 +3,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
-
 import { Peso } from '../../peso/entidade/peso';
 import { Imc } from '../entidade/imc';
+
 @Component({
   selector: 'app-salvar-imc',
   templateUrl: './salvar-imc.page.html',
@@ -30,14 +30,14 @@ export class SalvarImcPage implements OnInit {
   acessar() : void {
     this.rota.navigate([this.acao]);
   }
-  calcular(){
-    this.resultado = imc.altura*imc.altura;
-    this.total = imc.peso/resultado;
+  /*calcular(){
+    this.resultado = this.imc.altura*this.imc.altura;
+    this.total = this.imc.peso/this.resultado;
 
-    if(total<18.5){
+    if(this.total<18.5){
       alert("Indice de massa coporal"+total+", abaixo do peso");
     }
-    if else(total>=18.5 && total<=24.9){
+    if else(this.total>=18.5 && this.acessartotal<=24.9){
       alert("Indice de massa coporal"+total+", peso normal");
     }
     if else(total>=18.5 && total<=29.9){
@@ -52,7 +52,7 @@ export class SalvarImcPage implements OnInit {
     if else(total>=40){
       alert("Indice de massa coporal"+total+", obesidade grau III");
     }
-  }
+  }*/
   ngOnInit() {
   }
 

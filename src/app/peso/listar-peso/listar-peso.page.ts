@@ -3,9 +3,8 @@ import { Observable } from 'rxjs';
 import { Peso } from '../../peso/entidade/peso';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
-import { PesoProvider } from '../../providers/peso/peso';
-import { NavController, ToastController } from 'ionic-angular';
-import { Observable } from 'rxjs/Observable';
+import {NavController, ToastController} from "ionic-angular/index";
+import { PesoProvider } from 'src/app/providers/peso/peso.provider';
 @Component({
   selector: 'app-listar-peso',
   templateUrl: './listar-peso.page.html',
@@ -16,7 +15,7 @@ export class ListarPesoPage implements OnInit {
   listaPeso: Observable<Peso[]>;
   peso: Observable<any>;
 
-    constructor(public navCtrl: NavController, private provider: ContactProvider,
+    constructor(public navCtrl: NavController, private provider: PesoProvider,
       private toast: ToastController, private fire: AngularFireDatabase) {
       this.peso = this.provider.getAll();
       this.listaPeso = this.fire.list<Peso>('peso').snapshotChanges().pipe(
@@ -28,7 +27,7 @@ export class ListarPesoPage implements OnInit {
       this.navCtrl.push('PesoEditPage');
     }
 
-    editPeso(contact: any) {
+    editPeso(peso: any) {
       // Maneira 1
       this.navCtrl.push('PesoEditPage', { peso: peso });
 

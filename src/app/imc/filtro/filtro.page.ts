@@ -3,7 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { Estado } from '../entidade/imc';
+import { Imc } from '../entidade/imc';
 @Component({
   selector: 'app-filtro',
   templateUrl: './filtro.page.html',

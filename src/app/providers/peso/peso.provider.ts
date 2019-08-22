@@ -12,7 +12,7 @@ export class PesoProvider {
     return this.db.list(this.PATH, ref => ref.orderByChild('altura'))
       .snapshotChanges().pipe(
       map(changes => ({
-        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+        return: changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       })))
   }
 

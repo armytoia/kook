@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Peso } from '../../peso/entidade/peso';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
-import {NavController, ToastController} from "ionic-angular/index";
+import {NavController, ToastController} from "@ionic/angular";
 import { PesoProvider } from 'src/app/providers/peso/peso.provider';
 @Component({
   selector: 'app-listar-peso',
@@ -39,10 +39,10 @@ export class ListarPesoPage implements OnInit {
       if (key) {
         this.provider.remove(key)
           .then(() => {
-            this.toast.create({ message: 'Peso removido sucesso.', duration: 3000 }).present();
+            this.toast.create({ message: 'Peso removido sucesso.', duration: 3000 }).await();
           })
           .catch(() => {
-            this.toast.create({ message: 'Erro ao remover o peso.', duration: 3000 }).present();
+            this.toast.create({ message: 'Erro ao remover o peso.', duration: 3000 }).await();
           });
       }
     }

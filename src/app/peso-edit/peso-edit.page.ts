@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PesoProvider } from '../providers/peso/peso.provider';
 
-@IonicPage()
+
 @Component({
   selector: 'page-peso-edit',
   templateUrl: 'peso-edit.html',
@@ -44,7 +44,7 @@ export class PesoEditPage {
           this.navCtrl.pop();
         })
         .catch((e) => {
-          this.toast.create({ message: 'Erro ao salvar o peso.', duration: 3000 }).present();
+          this.toast.create({ message: 'Erro ao salvar o peso.', duration: 3000 }).await();
           console.error(e);
         })
     }

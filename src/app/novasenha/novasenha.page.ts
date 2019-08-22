@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController, ToastController, AuthService } from 'ionic-angular';
+import { NavController, ToastController, AuthService } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 import { Pessoa } from '../entidade/pessoa';
 

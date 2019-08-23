@@ -10,7 +10,6 @@
     <ion-label position="floating">Email:</ion-label>
     <ion-input type="text" placeholder="insira o seu email" name="email" [(ngModel)]="pessoa.email"></ion-input>
   </ion-item>
-
   <ion-item>
     <ion-label position="floating">Senha:</ion-label>
     <ion-input type="password" placeholder="insira a sua senha" name="senha" [(ngModel)]="pessoa.senha"></ion-input>
@@ -18,7 +17,7 @@
 
 
   <ion-button expand="full" fill="outline" (click)="logar()"> acessar</ion-button>
-  <ion-button expand="full" fill="outline" href = "novasenha"> esqueci a senha</ion-button>
+  <ion-button expand="full" fill="outline" (click) = "mudar()"> esqueci a senha</ion-button>
 
 </ion-content>
 <ion-footer>
@@ -26,4 +25,5 @@
     <ion-icon name="list-box"></ion-icon>
     <ion-button color="secondary" expand="full" href="listar-pessoa"> lista de pessoas </ion-button>
   </ion-item>
+
 </ion-footer>

@@ -23,5 +23,9 @@ export class ListarMassaComponent implements OnInit {
   }
   ngOnInit() {
   }
+  excluir(key){
+    this.fire.list('massa').remove(key);
+    alert("excluido da lista");
+  }
 
 }

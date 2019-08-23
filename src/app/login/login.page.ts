@@ -24,5 +24,8 @@ export class LoginPage implements OnInit {
  }
   ngOnInit() {
   }
-
+  mudar(){
+    alert('verifique seu email');
+    this.afAuth.auth.sendPasswordResetEmail(this.pessoa.email).then(()=> alert('verifique seu email')); {this.router.navigate([]);}
+  }
 }

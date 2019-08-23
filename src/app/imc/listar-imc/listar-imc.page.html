@@ -8,6 +8,9 @@
     <ion-item *ngFor="let imc of listaImc| async">
       <ion-label>{{ imc.peso }}</ion-label>
       <ion-label>{{ imc.altura }}</ion-label>
+      <ion-button expand="full" shape="round" href="listar-imc" (click)= "excluir(imc.key)">
+      <ion-icon name="trash"></ion-icon>
+    </ion-button>
     </ion-item>
   </ion-list>
   <h2>Filtro</h2>
@@ -27,7 +30,7 @@
 </ion-item>
 <ion-button *ngIf="peso" (click)="removeFilter('peso')">Remove filter</ion-button>
 
-<h4>Endangered Species</h4>
+<h4>Status</h4>
 <ion-checkbox [(ngModel)]="peso" (ionChange)="filterBoolean('status', true)">Ativo</ion-checkbox>
 
 <div >
@@ -38,4 +41,5 @@
   </ion-list>
 </div>
   <ion-button expand="full" shape="round" href="salvar-imc">voltar</ion-button>
+
 </ion-content>

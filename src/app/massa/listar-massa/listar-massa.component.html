@@ -11,6 +11,9 @@
     <ion-item *ngFor="let massa of listaMassas | async">
       <ion-label>{{ massa.dia }}</ion-label>
       <ion-label> {{ massa.peso }}</ion-label>
+      <ion-button expand="full" shape="round" href="listar-massa" (click)= "excluir(massa.key)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

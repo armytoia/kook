@@ -17,7 +17,10 @@ export class ListarImcPage implements OnInit {
       map( lista => lista.map(linha => ({ key: linha.payload.key, ... linha.payload.val() })))
     );
   }
-
+  excluir(key){
+    this.fire.list('imc').remove(key);
+    alert("excluido da lista");
+  }
 
   ngOnInit() {
   }

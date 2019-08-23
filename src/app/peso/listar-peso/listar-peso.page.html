@@ -10,6 +10,10 @@
       <ion-item>
       <ion-label>{{ imc.peso }}</ion-label>
       <ion-label>{{ imc.altura }}</ion-label>
+      <ion-icon name="trash"></ion-icon>
+      <ion-button expand="full" shape="round" href="listar-peso" (click)= "excluir(peso.key)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
     </ion-item>
     <ion-item-options side="left">
        <button ion-button color="secondary" (click)="editPeso(peso)">

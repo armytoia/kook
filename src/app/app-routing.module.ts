@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'salvar-peso', loadChildren: './peso/salvar-peso/salvar-peso.module#SalvarPesoPageModule' },
   { path: 'listar-peso', loadChildren: './peso/listar-peso/listar-peso.module#ListarPesoPageModule' },
   { path: 'filtro', loadChildren: './imc/filtro/filtro.module#FiltroPageModule' }, 
-  { path: 'novasenha', loadChildren: './novasenha/novasenha.module#NovasenhaPageModule' },
 
 ];
 

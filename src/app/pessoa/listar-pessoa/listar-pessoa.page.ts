@@ -21,7 +21,10 @@ export class ListarPessoaPage implements OnInit {
     );//ira guardar esses contatos(lista), o fire tem os metodos necessarios para listar, e converter os dados para contato, configurando ela em linha(chave)
 
   }
-
+excluir(key){
+  this.fire.list('pessoa').remove(key);
+  alert("excluido da lista");
+}
   ngOnInit() {
   }
 

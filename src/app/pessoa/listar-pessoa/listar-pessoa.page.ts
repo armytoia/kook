@@ -3,6 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Pessoa } from '../../entidade/pessoa';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -12,6 +13,11 @@ import { Pessoa } from '../../entidade/pessoa';
 export class ListarPessoaPage implements OnInit {
 
   listaPessoas: Observable<Pessoa[]>;
+  listaFiltro: Pessoa[];
+  filtro = {}; //regras ativas do filtro
+  pessoas: any;
+  valor: string;
+
 
   constructor(private fire: AngularFireDatabase) {
     this.listaPessoas = this.fire.list<Pessoa>('pessoa').snapshotChanges().pipe(//busca
@@ -21,11 +27,18 @@ export class ListarPessoaPage implements OnInit {
     );//ira guardar esses contatos(lista), o fire tem os metodos necessarios para listar, e converter os dados para contato, configurando ela em linha(chave)
 
   }
-excluir(key){
+  ngOnInit() {
+    this.listaPessoas.subscribe(pessoa => {
+          this.pessoas = pessoa;
+          this.listaFiltro = _.filter(this.pessoas, _.conforms(this.filtro));
+  })
+  }
+  filtrar(){
+    this.filtro['email'] = val => val.includes(this.valor);
+    this.listaFiltro = _.filter(this.pessoas, _.conforms(this.filtro));
+}
+excluir(key) {
   this.fire.list('pessoa').remove(key);
   alert("excluido da lista");
 }
-  ngOnInit() {
-  }
-
 }

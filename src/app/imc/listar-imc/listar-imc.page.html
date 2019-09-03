@@ -2,6 +2,18 @@
   <ion-toolbar>
     <ion-title>lista de IMC</ion-title>
   </ion-toolbar>
+  <ion-list>
+      <ion-item href = "massagordainicio">Tela inicial</ion-item>
+      <ion-item href = "salvar-imc">Calcular imc</ion-item>
+      <ion-item href = "login">Login</ion-item>
+      <ion-item href = "cadastrar-massa">cadastrar massa</ion-item>
+      <ion-item href = "listar-massa">lista de peso</ion-item>
+      <ion-item href = "salvar-peso">cadastrar peso</ion-item>
+      <ion-item href = "listar-peso">lista de pesos e altura</ion-item>
+      <ion-item href = "salvar-pessoa">cadastro</ion-item>
+      <ion-item href = "listar-pesso">lista de usuários</ion-item>
+      <ion-item href = "grafico">garfico de massa</ion-item>
+    </ion-list>
 </ion-header>
 <ion-content>
   <ion-list>
@@ -13,33 +25,7 @@
     </ion-button>
     </ion-item>
   </ion-list>
-  <h2>Filtro</h2>
 
-<ion-item>
-  <ion-label position="floating">Escolha um filtro</ion-label>
-  <ion-select [(ngModel)]="peso" (ionChange)="filterExact('peso', peso)">
-    <ion-select-option *ngFor='let imc of listaImc | async' [value]="imc.peso" >{{imc.peso}}</ion-select-option>
-  </ion-select>
-</ion-item>
-
-<ion-button *ngIf="imc" (click)="removeFilter('imc')">Remove filtro</ion-button>
-
-<ion-item>
-  <ion-label position="floating">Digite o filtro</ion-label>
-  <ion-input type="text" [(ngModel)]="peso" (change)="filterGreaterThan('peso', peso)"></ion-input>
-</ion-item>
-<ion-button *ngIf="peso" (click)="removeFilter('peso')">Remove filter</ion-button>
-
-<h4>Status</h4>
-<ion-checkbox [(ngModel)]="peso" (ionChange)="filterBoolean('status', true)">Ativo</ion-checkbox>
-
-<div >
-  <ion-list>
-    <ion-item *ngFor="let imc of filtroImc">
-      <ion-label>{{imc.peso}}</ion-label>
-    </ion-item>
-  </ion-list>
-</div>
   <ion-button expand="full" shape="round" href="salvar-imc">voltar</ion-button>
 
 </ion-content>

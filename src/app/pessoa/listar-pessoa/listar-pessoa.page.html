@@ -7,12 +7,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list color="secondary">
-    <ion-item *ngFor="let pessoa of listaPessoas | async">
+    <ion-item *ngFor="let pessoa of listaFiltro | async">
       <ion-label>{{ pessoa.email }}</ion-label>
-      <ion-button expand="full" shape="round" href="listar-pessoa" (click)= "excluir(pessoa.key)">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
+      <ion-button expand="full" shape="round" href="listar-pessoa" (click)= "excluir(pessoa.key)"><ion-icon name="trash"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

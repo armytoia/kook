@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Pessoa } from '../../entidade/pessoa';
 import * as _ from 'lodash';
+import { ModalController } from '@ionic/angular';
+import { SalvarPessoaPage } from '../salvar-pessoa/salvar-pessoa.page';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -19,7 +21,7 @@ export class ListarPessoaPage implements OnInit {
   valor: string;
 
 
-  constructor(private fire: AngularFireDatabase) {
+  constructor(private fire: AngularFireDatabase, private modal: ModalController) {
     this.listaPessoas = this.fire.list<Pessoa>('pessoa').snapshotChanges().pipe(//busca
       map(lista => lista.map(linha => ({
         key: linha.payload.key, ...linha.payload.val()// seja formatado pela chave e pelo valor

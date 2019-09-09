@@ -1,2 +1,3 @@
 export class Peso {
+  key;
 }

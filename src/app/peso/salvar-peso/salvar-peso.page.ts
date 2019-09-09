@@ -3,6 +3,7 @@ import { Peso } from '../../peso/entidade/peso';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from "angularfire2/auth";
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-salvar-peso',
   templateUrl: './salvar-peso.page.html',
@@ -11,16 +12,20 @@ import { AngularFireAuth } from "angularfire2/auth";
 export class SalvarPesoPage implements OnInit {
 
   peso: Peso = new Peso();
-  constructor(private fire: AngularFireAuth, private router: Router) { }
+  constructor(private fire: AngularFireAuth, private router: Router, private modal: ModalController) { }
 
 
   salvar() {
-    this.fire.list('peso').push(this.peso);
-    this.peso = new Peso();
-    this.router.navigate(['grafico']);
+    if (this.peso.key == null) {
+      this.fire.list('peso').push(this.peso);
+      this.peso = new Peso();
+      this.router.navigate(['grafico']);
+    }
+    else {
+      this.fire.object('contato/' + this.peso.key).update(this.peso);
+      this.modal.dismiss();
+    }
   }
-
-
   ngOnInit() {
   }
 

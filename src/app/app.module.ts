@@ -15,6 +15,7 @@ import { CadastrarMassaComponent } from './massa/cadastrar-massa/cadastrar-massa
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ListarMassaComponent } from './massa/listar-massa/listar-massa.component';
+
 @NgModule({
   declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, CadastrarMassaComponent, ListarMassaComponent],
   entryComponents: [],

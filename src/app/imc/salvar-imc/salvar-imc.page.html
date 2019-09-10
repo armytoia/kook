@@ -13,7 +13,7 @@
   <ion-item>
       <ion-label position="floating">Altura:</ion-label>
       <ion-select [(ngModel)]="imc.altura">
-        <ion-select-option *ngFor='let imc of listaImc | async' [value]="imc" >{{imc.peso}}</ion-select-option>
+        <ion-select-option *ngFor='let imc of listaImc | async' [value]="imc" >{{imc.altura}}</ion-select-option>
       </ion-select>
     </ion-item>
   <div>
@@ -25,10 +25,10 @@
      </ion-select>
    </ion-item>
   </div>
-  <ion-button expand="full" fill="outline" (click)="calcular()"> calcular </ion-button>
-  <ion-button expand="full" fill="outline" (click)="salvar()"> salvar </ion-button>
+  <ion-button expand="full" fill="secondy" (click)="calcular()"> calcular </ion-button>
+  <ion-button expand="full" fill="secondy" (click)="salvar()"> salvar </ion-button>
 </ion-content>
 <ion-footer>
-  <ion-button expand="full" fill="outline" href="grafico"> acompanhamento </ion-button>
-  <ion-button expand="full" fill="outline" href="cadastrar-massa"> voltar </ion-button>
+  <ion-button expand="full" fill="secondy" href="grafico"> acompanhamento </ion-button>
+  <ion-button expand="full" fill="secondy" href="cadastrar-massa"> voltar </ion-button>
 </ion-footer>

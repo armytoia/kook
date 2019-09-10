@@ -33,17 +33,11 @@ export class ListarPesoPage implements OnInit {
 })
   }
   filtrar(){
-    this.filtro['peso'] = val => val.includes(this.valor);
+    this.filtro['imc.altura'] = val => val.includes(this.valor);
     this.listaFiltro = _.filter(this.pesos, _.conforms(this.filtro));
 }
   excluir(key) {
     this.fire.list('peso').remove(key);
     alert("excluido da lista");
-  }
-  async alterar(entidade) {
-    const tela = await this.modal.create({
-      component: SalvarPesoPage, componentProps: { peso: entidade }
-    });
-    tela.present();
   }
 }

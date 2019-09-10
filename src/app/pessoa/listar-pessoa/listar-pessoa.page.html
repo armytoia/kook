@@ -3,13 +3,13 @@
     <ion-title>
       Lista de Pessoas
     </ion-title>
-      <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list color="secondary">
-    <ion-item *ngFor="let pessoa of listaFiltro | async">
+  <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
+  <ion-list >
+    <ion-item *ngFor="let pessoa of listaFiltro">
       <ion-label>{{ pessoa.email }}</ion-label>
       <ion-button  (click)= "excluir(pessoa.key)"><ion-icon name="trash"></ion-icon></ion-button>
     </ion-item>

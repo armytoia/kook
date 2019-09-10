@@ -12,21 +12,15 @@ import { ModalController } from '@ionic/angular';
 export class SalvarPesoPage implements OnInit {
 
   peso: Peso = new Peso();
-  constructor(private fire: AngularFireAuth, private router: Router, private modal: ModalController) { }
+  constructor(private fire: AngularFireDatabase, private router: Router, private modal: ModalController) { }
 
 
   salvar() {
-    if (this.peso.key == null) {
-      this.fire.list('peso').push(this.peso);
-      this.peso = new Peso();
-      this.router.navigate(['grafico']);
-    }
-    else {
-      this.fire.object('contato/' + this.peso.key).update(this.peso);
-      this.modal.dismiss();
-    }
-  }
-  ngOnInit() {
+    this.fire.list('peso').push(this.peso);
+    this.peso = new Peso();
+    this.router.navigate(['listar-peso']);
   }
 
+  ngOnInit() {
+  }
 }

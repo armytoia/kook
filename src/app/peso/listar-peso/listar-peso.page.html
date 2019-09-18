@@ -8,11 +8,11 @@
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let peso of listaFiltro">
-      <ion-label>{{ imc.peso }}</ion-label>
-      <ion-label>{{ imc.altura }}</ion-label>
+      <ion-label>{{ peso.peso }}</ion-label>
+      <ion-label>{{ peso.altura }}</ion-label>
       <ion-button  (click)="excluir(peso.key)"><ion-icon name="trash"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
-  <ion-button expand="full" fill="outline" href="salvar-peso"> voltar </ion-button>
+  <ion-button expand="full" color = "secondary" href="salvar-peso"> voltar </ion-button>
 
 </ion-content>

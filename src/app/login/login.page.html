@@ -6,18 +6,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <form #meuSonho='ngForm'>
   <ion-item>
-    <ion-label position="floating">Email:</ion-label>
-    <ion-input type="text" placeholder="insira o seu email" name="email" [(ngModel)]="pessoa.email"></ion-input>
+    <ion-label position="floating">Email *:</ion-label>
+    <ion-input #email='ngModel' type="text" placeholder="insira o seu email" name="email" [(ngModel)]="pessoa.email" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating">Senha:</ion-label>
-    <ion-input type="password" placeholder="insira a sua senha" name="senha" [(ngModel)]="pessoa.senha"></ion-input>
+    <ion-label position="floating">Senha *:</ion-label>
+    <ion-input #senha='ngModel' type="password" placeholder="insira a sua senha" name="senha" [(ngModel)]="pessoa.senha" minlength = "8" required></ion-input>
   </ion-item>
-
-
-  <ion-button expand="full" fill="outline" (click)="logar()"> acessar</ion-button>
-  <ion-button expand="full" fill="outline" (click) = "mudar()"> esqueci a senha</ion-button>
+</form>
+<span style='color:red' *ngIf="email.errors && email.touched">
+  <ion-label>O email é obrigatório! </ion-label>
+</span>
+<span style='color:blue' *ngIf="senha.errors && senha.touched">
+  <ion-label> A senha é obrigatória (minímo 8 caracteres)!</ion-label>
+</span>
+  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" color = "secondary" (click)="logar()"> acessar</ion-button>
+  <ion-button expand="full" color = "secondary" (click) = "mudar()"> esqueci a senha</ion-button>
 
 </ion-content>
 <ion-footer>

@@ -3,8 +3,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
-import { Peso } from '../../peso/entidade/peso';
 import { Imc } from '../entidade/imc';
+import { Peso } from '../../peso/entidade/peso';
 
 @Component({
   selector: 'app-salvar-imc',
@@ -16,9 +16,9 @@ export class SalvarImcPage implements OnInit {
   total: number;
   resultado: number;
   imc: Imc = new Imc();
-  listaImc: Observable<Imc[]>;
+  listaPeso: Observable<Peso[]>;
   constructor(private fire: AngularFireDatabase, private rota: Router) {
-    this.listaImc = this.fire.list<Imc>('imc').snapshotChanges().pipe(
+    this.listaPeso = this.fire.list<Peso>('peso').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
     );
   }
@@ -27,13 +27,10 @@ export class SalvarImcPage implements OnInit {
     this.imc = new Imc();
     this.rota.navigate(['grafico']);
   }
-  acessar(): void {
-    this.rota.navigate([this.acao]);
-  }
   calcular() {
-    let resultado = Number(this.imc.altura * this.imc.altura);
+    let resultado = Number(this.peso.altura * this.peso.altura);
     let total = Number(this.total);
-    let peso = Number(this.imc.peso);
+    let peso = Number(this.peso.peso);
     total = peso / resultado;
 
     if (this.total < 18.5) {

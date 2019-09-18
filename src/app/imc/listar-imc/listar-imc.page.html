@@ -2,30 +2,18 @@
   <ion-toolbar>
     <ion-title>lista de IMC</ion-title>
   </ion-toolbar>
-  <ion-list>
-      <ion-item href = "massagordainicio">Tela inicial</ion-item>
-      <ion-item href = "salvar-imc">Calcular imc</ion-item>
-      <ion-item href = "login">Login</ion-item>
-      <ion-item href = "cadastrar-massa">cadastrar massa</ion-item>
-      <ion-item href = "listar-massa">lista de peso</ion-item>
-      <ion-item href = "salvar-peso">cadastrar peso</ion-item>
-      <ion-item href = "listar-peso">lista de pesos e altura</ion-item>
-      <ion-item href = "salvar-pessoa">cadastro</ion-item>
-      <ion-item href = "listar-pesso">lista de usuários</ion-item>
-      <ion-item href = "grafico">garfico de massa</ion-item>
-    </ion-list>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let imc of listaImc| async">
-      <ion-label>{{ imc.peso }}</ion-label>
-      <ion-label>{{ imc.altura }}</ion-label>
-      <ion-button expand="full" shape="round" href="listar-imc" (click)= "excluir(imc.key)">
-      <ion-icon name="trash"></ion-icon>
-    </ion-button>
+      <ion-label>{{ peso.altura }}</ion-label>
+      <ion-label>{{ peso.peso }}</ion-label>
+      <ion-button expand="full" shape="round"  (click)="excluir(imc.key)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 
-  <ion-button expand="full" shape="round" href="salvar-imc">voltar</ion-button>
+  <ion-button expand="full" color = "secondary"shape="round" href="salvar-imc">voltar</ion-button>
 
 </ion-content>

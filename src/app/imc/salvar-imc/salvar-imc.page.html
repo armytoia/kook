@@ -8,27 +8,17 @@
 <ion-content>
     <ion-item>
       <ion-label position="floating">Altura:</ion-label>
-      <ion-select  name="altura" [(ngModel)]="imc.altura" >
-        <ion-select-option *ngFor='let peso of listaPeso | async' [value]="altura">{{peso.altura}}</ion-select-option>
+      <ion-select  name="altura" [(ngModel)]="massa.altura" >
+        <ion-select-option *ngFor='let massa of listaMassa | async' [value]="massa">{{massa.altura}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Peso:</ion-label>
-      <ion-select  [(ngModel)]="imc.peso" name ="peso" >
-        <ion-select-option *ngFor='let peso of listaPeso | async' [value]="peso">{{peso.peso}}</ion-select-option>
+      <ion-select  [(ngModel)]="massa.peso" name ="peso" >
+        <ion-select-option *ngFor='let massa of listaMassa | async' [value]="massa">{{massa.peso}}</ion-select-option>
       </ion-select>
     </ion-item>
 
-
-  <div>
-    <ion-item>
-      <ion-label position="floating">Mais</ion-label>
-      <ion-select [(ngModel)]="acao" (ionChange)="acessar()">
-        <ion-select-option href="filtro">FILTRAR</ion-select-option>
-        <ion-select-option href="listar-imc">LISTAR</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </div>
   <ion-button  expand="full" color="secondary" (click)="calcular()"> calcular </ion-button>
   <ion-button  expand="full" color = "secondary" (click)="salvar()"> salvar </ion-button>
 </ion-content>

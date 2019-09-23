@@ -4,5 +4,6 @@ export class Massa {
   sexo: string;
   imc : number;
   dia : string;
+  altura : Number;
   key;
 }

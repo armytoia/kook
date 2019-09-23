@@ -18,7 +18,11 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Data:</ion-label>
-      <ion-input [(ngModel)]="massa.dia" name="data"></ion-input>
+      <ion-input [(ngModel)]="massa.dia" name="dia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Altura:</ion-label>
+      <ion-input [(ngModel)]="massa.altura" name="altura"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">IMC *:</ion-label>
@@ -44,8 +48,8 @@
 
 
 
-  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" color="secondary" (click)="calcular()"> calcular </ion-button>
-  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" color = "secondary" (click)="salvar()"> salvar dados </ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="secondary" (click)="calcular()"> calcular </ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="secondary" (click)="salvar()"> salvar dados </ion-button>
 
 
 

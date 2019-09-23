@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {chartJs} from 'chart.js';
+import { MenuController } from '@ionic/angular';
 
 @Component ({
 selector : 'grafico-component',
@@ -7,6 +8,8 @@ templateUrl : 'grafico.component.html'
 })
 
 export class GraficoComponent{
+  constructor(private menu: MenuController){}
+
   /*    @aViewChild('barCanvas') barCanvas;
 
       barChart: any;

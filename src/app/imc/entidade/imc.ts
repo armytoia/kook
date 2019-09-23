@@ -1,4 +1,4 @@
-import { Peso } from 'src/app/peso/entidade/peso';
+import { Massa } from 'src/app/massa/entidade/massa';
 export class Imc {
-  peso: Peso;
+massa:Massa;
 }

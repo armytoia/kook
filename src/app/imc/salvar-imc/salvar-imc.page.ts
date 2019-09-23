@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { Imc } from '../entidade/imc';
-import { Peso } from '../../peso/entidade/peso';
+import { Massa } from '../../massa/entidade/massa';
 
 @Component({
   selector: 'app-salvar-imc',
@@ -16,9 +16,10 @@ export class SalvarImcPage implements OnInit {
   total: number;
   resultado: number;
   imc: Imc = new Imc();
-  listaPeso: Observable<Peso[]>;
+  massa: Massa = new Massa();
+  listaMassa: Observable<Massa[]>;
   constructor(private fire: AngularFireDatabase, private rota: Router) {
-    this.listaPeso = this.fire.list<Peso>('peso').snapshotChanges().pipe(
+    this.listaMassa = this.fire.list<Massa>('peso').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
     );
   }
@@ -28,9 +29,9 @@ export class SalvarImcPage implements OnInit {
     this.rota.navigate(['grafico']);
   }
   calcular() {
-    let resultado = Number(this.peso.altura * this.peso.altura);
+    let resultado = Number(this.massa.altura) * Number(this.massa.altura);
     let total = Number(this.total);
-    let peso = Number(this.peso.peso);
+    let peso = Number(this.massa.peso);
     total = peso / resultado;
 
     if (this.total < 18.5) {
@@ -39,7 +40,7 @@ export class SalvarImcPage implements OnInit {
     else if (this.total >= 18.5 && this.total <= 24.9) {
       alert("Indice de massa coporal" + total + ", peso normal");
     }
-    else if (total >= 18.5 && total <= 29.9) {
+    else if (total >= 24.9 && total <= 29.9) {
       alert("Indice de massa coporal" + total + ", sobrepeso");
     }
     else if (total >= 30 && total <= 34.9) {

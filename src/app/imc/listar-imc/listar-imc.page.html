@@ -6,8 +6,8 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let imc of listaImc| async">
-      <ion-label>{{ peso.altura }}</ion-label>
-      <ion-label>{{ peso.peso }}</ion-label>
+      <ion-label>{{ massa.altura }}</ion-label>
+      <ion-label>{{ massa.peso }}</ion-label>
       <ion-button expand="full" shape="round"  (click)="excluir(imc.key)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>

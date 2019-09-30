@@ -6,6 +6,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-button (click)= "tela()" >telas</ion-button>
 
   <form #meuSonho='ngForm'>
     <ion-item>
@@ -48,28 +49,23 @@
 
 
 
-  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="secondary" (click)="calcular()"> calcular </ion-button>
-  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="secondary" (click)="salvar()"> salvar dados </ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="danger" (click)="calcular()"> calcular </ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="danger" (click)="salvar()"> salvar dados </ion-button>
+
+
+    <ion-button color="secondary" expand="full" href="salvar-peso"> salvar peso </ion-button>
+
+    <ion-button color="secondary" expand="full" href="salvar-imc"> salvar imc </ion-button>
+
+
+    <ion-button color="secondary" expand="full" href="login"> voltar </ion-button>
+
+
+    <ion-button color="secondary" expand="full" href="grafico"> acompanhamento </ion-button>
 
 
 
 
 </ion-content>
 <ion-footer>
-  <ion-item>
-    <ion-icon name="arrow-round-forward"></ion-icon>
-    <ion-button color="secondary" expand="full" href="salvar-peso"> salvar peso </ion-button>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="arrow-round-forward"></ion-icon>
-    <ion-button color="secondary" expand="full" href="salvar-imc"> salvar imc </ion-button>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="arrow-round-back"></ion-icon>
-    <ion-button color="secondary" expand="full" href="login"> voltar </ion-button>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="arrow-round-forward"></ion-icon>
-    <ion-button color="secondary" expand="full" href="grafico"> acompanhamento </ion-button>
-  </ion-item>
 </ion-footer>

@@ -3,7 +3,7 @@ import { Massa } from '../entidade/massa';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Pessoa } from '../../entidade/pessoa';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { ModalController, PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastrar-massa',
@@ -17,8 +17,15 @@ export class CadastrarMassaComponent implements OnInit {
 
 
 
-  constructor(private banco: AngularFireDatabase, private router: Router, private modal: ModalController) { }
-
+  constructor(private banco: AngularFireDatabase, private router: Router, private modal: ModalController, public popoverController: PopoverController) { }
+  async tela(ev: any) {
+    const popover = await this.popoverController.create({
+      component: CadastrarMassaComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
   ngOnInit() { }
   calcular(): void {
     /*  let altura = this.pessoa.altura;

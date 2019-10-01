@@ -4,6 +4,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Pessoa } from '../../entidade/pessoa';
 import { Router } from '@angular/router';
 import { ModalController, PopoverController } from '@ionic/angular';
+import { SalvarTelaComponent } from '../../tela/salvar-tela/salvar-tela.component';
 
 @Component({
   selector: 'app-cadastrar-massa',
@@ -20,7 +21,7 @@ export class CadastrarMassaComponent implements OnInit {
   constructor(private banco: AngularFireDatabase, private router: Router, private modal: ModalController, public popoverController: PopoverController) { }
   async tela(ev: any) {
     const popover = await this.popoverController.create({
-      component: CadastrarMassaComponent,
+      component: SalvarTelaComponent,
       event: ev,
       translucent: true
     });

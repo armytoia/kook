@@ -6,8 +6,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-button (click)= "tela()" >telas</ion-button>
-
+  <ion-item>
+    <ion-button (click)="tela()">telas</ion-button>
+  </ion-item>
   <form #meuSonho='ngForm'>
     <ion-item>
       <ion-label position="floating">Ano de nascimento *:</ion-label>
@@ -17,10 +18,13 @@
       <ion-label position="floating">Sexo *:</ion-label>
       <ion-input #sexo='ngModel' [(ngModel)]="massa.sexo" name="sexo" required></ion-input>
     </ion-item>
+
     <ion-item>
-      <ion-label position="floating">Data:</ion-label>
-      <ion-input [(ngModel)]="massa.dia" name="dia"></ion-input>
+      <ion-label position="floating" >Data:</ion-label>
+      <ion-datetime displayFormat="MM DD" placeholder="selecione a data" [(ngModel)]="massa.dia" name="dia"></ion-datetime>
     </ion-item>
+
+
     <ion-item>
       <ion-label position="floating">Altura:</ion-label>
       <ion-input [(ngModel)]="massa.altura" name="altura"></ion-input>
@@ -52,16 +56,6 @@
   <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="danger" (click)="calcular()"> calcular </ion-button>
   <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="danger" (click)="salvar()"> salvar dados </ion-button>
 
-
-    <ion-button color="secondary" expand="full" href="salvar-peso"> salvar peso </ion-button>
-
-    <ion-button color="secondary" expand="full" href="salvar-imc"> salvar imc </ion-button>
-
-
-    <ion-button color="secondary" expand="full" href="login"> voltar </ion-button>
-
-
-    <ion-button color="secondary" expand="full" href="grafico"> acompanhamento </ion-button>
 
 
 

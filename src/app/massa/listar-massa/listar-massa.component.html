@@ -1,29 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Lista de Peso
+      Lista de Peso e Altura
     </ion-title>
   </ion-toolbar>
+  <ion-button color="dark" expand="full" (click)="tela()">
+    <ion-icon name="add-circle"></ion-icon>telas
+  </ion-button>
 </ion-header>
-
 <ion-content>
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let massa of listaFiltro">
       <ion-label>{{ massa.dia }}</ion-label>
       <ion-label> {{ massa.peso }}</ion-label>
-      <ion-button (click)="excluir(massa.key)">
+      <ion-label> {{ massa.altura }}</ion-label>
+      <ion-button color = "danger" (click)="excluir(massa.key)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
-      <ion-button (click)="alterar(massa)">
+      <ion-button color= "success" (click)="alterar(massa)">
         <ion-icon name="create"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
 <ion-footer>
-  <ion-item>
-    <ion-icon name="arrow-round-back"></ion-icon>
-    <ion-button color="secondary" expand="full" href="cadastrar-massa"> voltar </ion-button>
-  </ion-item>
 </ion-footer>

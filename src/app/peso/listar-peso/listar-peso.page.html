@@ -5,14 +5,13 @@
 </ion-header>
 
 <ion-content>
+  <ion-button color = "dark" expand = "full" (click)="tela()"> <ion-icon name="add-circle"></ion-icon>telas</ion-button>
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let peso of listaFiltro">
-      <ion-label>{{ peso.peso }}</ion-label>
       <ion-label>{{ peso.altura }}</ion-label>
-      <ion-button  (click)="excluir(peso.key)"><ion-icon name="trash"></ion-icon></ion-button>
+      <ion-button  color = "danger" (click)="excluir(peso.key)"><ion-icon name="trash"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
-  <ion-button expand="full" color = "secondary" href="salvar-peso"> voltar </ion-button>
 
 </ion-content>

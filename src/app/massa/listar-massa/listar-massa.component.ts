@@ -6,6 +6,9 @@ import { ModalController } from '@ionic/angular';
 import * as _ from 'lodash';
 import { Massa } from '../entidade/massa';
 import { CadastrarMassaComponent} from '../cadastrar-massa/cadastrar-massa.component';
+import { PopoverController } from '@ionic/angular';
+import { SalvarTelaComponent } from '../../tela/salvar-tela/salvar-tela.component';
+
 
 @Component({
   selector: 'app-listar-massa',
@@ -20,12 +23,20 @@ export class ListarMassaComponent implements OnInit {
   valor: string;
 
 
-  constructor(private fire: AngularFireDatabase,  private modal: ModalController) {
+  constructor(private fire: AngularFireDatabase,  private modal: ModalController, public popoverController: PopoverController) {
     this.listaMassas = this.fire.list<Massa>('massa').snapshotChanges().pipe(//busca
       map(lista => lista.map(linha => ({
         key: linha.payload.key, ...linha.payload.val()// seja formatado pela chave e pelo valor
       })))
     );//ira guardar esses contatos(lista), o fire tem os metodos necessarios para listar, e converter os dados para contato, configurando ela em linha(chave)
+  }
+  async tela(ev: any) {
+    const popover = await this.popoverController.create({
+      component: SalvarTelaComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
   ngOnInit() {
     this.listaMassas.subscribe(massa => {

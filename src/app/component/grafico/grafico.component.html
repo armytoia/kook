@@ -4,24 +4,54 @@
       Acompanhamento
     </ion-title>
   </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-item>
-      <ion-icon name="list-box"></ion-icon>
-      <ion-button color="secondary" expand="full" href="listar-peso"> lista de pesos </ion-button>
-    </ion-item>
+    <ion-button color = "dark" expand = "full" (click)="tela()"> <ion-icon name="add-circle"></ion-icon>telas</ion-button>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-button color= "tertiary" expand="full" href="listar-peso"> <ion-icon name="list-box"></ion-icon> lista de pesos </ion-button>
+  </ion-item>
 
-    <ion-img src="../../../assets/img/TEMPO.jpg"></ion-img>
+  <ion-img src="../../../assets/img/TEMPO.jpg"></ion-img>
+  <div padding>
+      <ion-segment [(ngModel)]="segment" (ionChange)="calc(segment)">
+        <ion-segment-button  value="bar">
+          Bar
+        </ion-segment-button>
+        <ion-segment-button value="doughnut">
+          Doughnut
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="segment" style="segment">
+      <ion-list *ngSwitchCase="'bar'" >
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [colors]="barChartColors"
+                    [chartType]="barChartType"></canvas>
+          </div>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'doughnut'">
+              <div width="600" height="800">
+                <div style="display: block" >
+                  <canvas baseChart
+                              [data]="doughnutChartData"
+                              [labels]="doughnutChartLabels"
+                              [chartType]="doughnutChartType"></canvas>
+                </div>
+              </div>
+      </ion-list>
+    </div>
 
 
 
 
 
-
-  </ion-content>
-  <ion-footer>
-    <ion-item>
-      <ion-icon name="arrow-round-backward"></ion-icon>
-      <ion-button color="secondary" expand="full" href="salvar-imc"> voltar </ion-button>
-    </ion-item>
-  </ion-footer>
+</ion-content>
+<ion-footer>
+</ion-footer>

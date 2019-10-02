@@ -16,11 +16,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ListarMassaComponent } from './massa/listar-massa/listar-massa.component';
 import { SalvarTelaComponent } from './tela/salvar-tela/salvar-tela.component';
+import { ChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [AppComponent, MassaGordaInicioComponent, GraficoComponent, CadastrarMassaComponent, ListarMassaComponent, SalvarTelaComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ChartsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyATTE9-BcwmuX6yIBFDxkDYeeOdjupBaY0",
       authDomain: "kook-98558.firebaseapp.com",

@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import { ModalController } from '@ionic/angular';
 import * as _ from 'lodash';
 import { SalvarPesoPage } from '../salvar-peso/salvar-peso.page';
+import { PopoverController } from '@ionic/angular';
+import { SalvarTelaComponent } from '../../tela/salvar-tela/salvar-tela.component';
 
 @Component({
   selector: 'app-listar-peso',
@@ -21,11 +23,20 @@ export class ListarPesoPage implements OnInit {
   peso: Observable<any>;
   items: Observable<Peso[]>;
 
-  constructor(private fire: AngularFireDatabase,  private modal: ModalController) {
+  constructor(private fire: AngularFireDatabase,  private modal: ModalController, public popoverController: PopoverController) {
     this.listaPeso = this.fire.list<Peso>('peso').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
     );
   }
+  async tela(ev: any) {
+    const popover = await this.popoverController.create({
+      component: SalvarTelaComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
+
   ngOnInit() {
     this.listaPeso.subscribe(peso => {
         this.pesos = peso;

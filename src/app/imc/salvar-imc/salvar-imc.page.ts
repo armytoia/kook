@@ -5,6 +5,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { Imc } from '../entidade/imc';
 import { Massa } from '../../massa/entidade/massa';
+import { PopoverController } from '@ionic/angular';
+import { SalvarTelaComponent } from '../../tela/salvar-tela/salvar-tela.component';
 
 @Component({
   selector: 'app-salvar-imc',
@@ -18,10 +20,18 @@ export class SalvarImcPage implements OnInit {
   imc: Imc = new Imc();
   massa: Massa = new Massa();
   listaMassa: Observable<Massa[]>;
-  constructor(private fire: AngularFireDatabase, private rota: Router) {
-    this.listaMassa = this.fire.list<Massa>('peso').snapshotChanges().pipe(
+  constructor(private fire: AngularFireDatabase, private rota: Router, public popoverController: PopoverController) {
+    this.listaMassa = this.fire.list<Massa>('massa').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
     );
+  }
+  async tela(ev: any) {
+    const popover = await this.popoverController.create({
+      component: SalvarTelaComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
   salvar() {
     this.fire.list('imc').push(this.imc);

@@ -2,18 +2,16 @@
   <ion-toolbar>
     <ion-title>lista de IMC</ion-title>
   </ion-toolbar>
+<ion-button color = "dark" expand = "full" (click)="tela()"> <ion-icon name="add-circle"></ion-icon>telas</ion-button>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let imc of listaImc| async">
-      <ion-label>{{ massa.altura }}</ion-label>
-      <ion-label>{{ massa.peso }}</ion-label>
-      <ion-button expand="full" shape="round"  (click)="excluir(imc.key)">
+      <ion-label>{{ massa.imc }}</ion-label>
+      <ion-button  color = "danger" expand="full" shape="round" (click)="excluir(imc.key)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
-
-  <ion-button expand="full" color = "secondary"shape="round" href="salvar-imc">voltar</ion-button>
 
 </ion-content>

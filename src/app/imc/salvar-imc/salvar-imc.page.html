@@ -9,13 +9,13 @@
 <ion-content>
   <ion-item>
     <ion-label position="floating">Altura:</ion-label>
-    <ion-select name="altura" [(ngModel)]="imc.massa">
+    <ion-select name="altura" [(ngModel)]="imc.massa" okText="Ok" cancelText="voltar">
       <ion-select-option *ngFor='let massa of listaMassa | async' [value]="massa">{{massa.altura}}</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Peso:</ion-label>
-    <ion-select [(ngModel)]="imc.massa" name="peso">
+    <ion-select [(ngModel)]="imc.massa" name="peso" okText="Ok" cancelText="voltar">
       <ion-select-option *ngFor='let massa of listaMassa | async' [value]="massa">{{massa.peso}}</ion-select-option>
     </ion-select>
   </ion-item>

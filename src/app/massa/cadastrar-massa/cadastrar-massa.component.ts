@@ -46,7 +46,7 @@ export class CadastrarMassaComponent implements OnInit {
 
 
 
-    if (sexo == "feminino") {
+    if (this.massa.sexo == "feminino") {
       let total = (1.20 * imc) + (0.23 * data) - (10.8 * 0) - 5.4;
       alert("Sua porcentagem de massa gorda é:" + total + "%");
     }

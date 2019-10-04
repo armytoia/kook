@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
-import {chartJs} from 'chart.js';
+//import {chartJs} from 'chart.js';
 import { MenuController } from '@ionic/angular';
 import { PopoverController } from '@ionic/angular';
 import { SalvarTelaComponent } from '../../tela/salvar-tela/salvar-tela.component';
 import { NavController } from '@ionic/angular';
+//import chartJs from 'chart.js';
 
 @Component ({
 selector : 'grafico-component',
@@ -20,7 +21,7 @@ export class GraficoComponent{
     });
     return await popover.present();
   }
-  barChartOptions: any = [{
+  /*barChartOptions: any = [{
    scales: {
       yAxes: [
        {
@@ -72,7 +73,7 @@ export class GraficoComponent{
  calcDoughnut(){
    this.doughnutChartLabels = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
    this.doughnutChartData = [350, 450, 100];
- };
+ };*/
 
   /*    @aViewChild('barCanvas') barCanvas;
 

@@ -4,8 +4,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Pessoa } from '../../entidade/pessoa';
 import * as _ from 'lodash';
+import { PopoverController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { SalvarPessoaPage } from '../salvar-pessoa/salvar-pessoa.page';
+import { SalvarTelaComponent } from '../../tela/salvar-tela/salvar-tela.component';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -21,13 +23,21 @@ export class ListarPessoaPage implements OnInit {
   valor: string;
 
 
-  constructor(private fire: AngularFireDatabase, private modal: ModalController) {
+  constructor(private fire: AngularFireDatabase, private modal: ModalController, public popoverController: PopoverController) {
     this.listaPessoas = this.fire.list<Pessoa>('pessoa').snapshotChanges().pipe(//busca
       map(lista => lista.map(linha => ({
         key: linha.payload.key, ...linha.payload.val()// seja formatado pela chave e pelo valor
       })))
     );//ira guardar esses contatos(lista), o fire tem os metodos necessarios para listar, e converter os dados para contato, configurando ela em linha(chave)
 
+  }
+  async tela(ev: any) {
+    const popover = await this.popoverController.create({
+      component: SalvarTelaComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
   ngOnInit() {
     this.listaPessoas.subscribe(pessoa => {

@@ -9,6 +9,7 @@
   <ion-item>
     <ion-button color="tertiary" expand="full" href="listar-pessoa"><ion-icon name="list-box"></ion-icon> lista de pessoas </ion-button>
   </ion-item>
+  <ion-card-content>
   <form #meuSonho='ngForm'>
   <ion-item>
     <ion-label position="floating">Email *:</ion-label>
@@ -25,6 +26,7 @@
 <span style='color:blue' *ngIf="senha.errors && senha.touched">
   <ion-label> A senha é obrigatória (minímo 8 caracteres)!</ion-label>
 </span>
+</ion-card-content>
   <ion-button [disabled] = '!meuSonho.form.valid' expand="full" color = "secondary" (click)="logar()"> acessar</ion-button>
   <ion-button expand="full" color = "secondary" (click) = "mudar()"> esqueci a senha</ion-button>
 

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'salvar-pessoa', loadChildren: './pessoa/salvar-pessoa/salvar-pessoa.module#SalvarPessoaPageModule' },
   { path: 'listar-pessoa', loadChildren: './pessoa/listar-pessoa/listar-pessoa.module#ListarPessoaPageModule' },
   { path: 'salvar-imc', loadChildren: './imc/salvar-imc/salvar-imc.module#SalvarImcPageModule' },
+  { path: 'listar-imc', loadChildren: './imc/listar-imc/listar-imc.module#ListarImcPageModule' },
   { path: 'salvar-peso', loadChildren: './peso/salvar-peso/salvar-peso.module#SalvarPesoPageModule' },
   { path: 'listar-peso', loadChildren: './peso/listar-peso/listar-peso.module#ListarPesoPageModule' },
   { path: 'filtro', loadChildren: './imc/filtro/filtro.module#FiltroPageModule' },
